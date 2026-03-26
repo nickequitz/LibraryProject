@@ -10,8 +10,6 @@ import FinePayment from './pages/FinePayment';
 
 
 export default function App() {
-  const [message, setMessage] = useState('')
-
   return (
     <BrowserRouter>
       <Routes>
