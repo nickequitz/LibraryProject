@@ -40,7 +40,8 @@ const db = await mysql.createConnection({
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    ssl: { rejectUnauthorized: true }
 })
 
 // registering a user with firstname lastname email and password being input
@@ -252,5 +253,5 @@ app.put("/finepayment", async (req,res) => {
     }
 })
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Server running on port ' + PORT));
