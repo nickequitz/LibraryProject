@@ -10,7 +10,7 @@ export default function UserAccount() {
   useEffect(() => {
     async function checkLogin() {
       try {
-        const response = await fetch("http://localhost:3000/me", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/me`, {
           credentials: "include",
         });
         const data = await response.json();
@@ -29,7 +29,7 @@ export default function UserAccount() {
   async function handleLogout() {
     setError("");
     try {
-      const response = await fetch("http://localhost:3000/logout", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/logout`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

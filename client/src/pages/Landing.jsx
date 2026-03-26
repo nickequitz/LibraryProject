@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 async function numLiterature() {
   try {
-    const response = await fetch("http://localhost:3000/numliterature");
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/numliterature`);
     const data = await response.json();
     return data;
   } catch (err) {
